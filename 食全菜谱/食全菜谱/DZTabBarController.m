@@ -14,7 +14,6 @@
 
 #import "DZThrepyViewController.h"
 
-#import "UIImage+Category.h"
 
 @interface DZTabBarController ()
 
