@@ -10,15 +10,40 @@
 
 @interface DZAllFoodsViewController ()
 
+//添加分栏控制器
+@property(nonatomic,strong)UISegmentedControl *mainSeg;
+
 @end
 
 @implementation DZAllFoodsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor greenColor];
+//    self.view.backgroundColor = [UIColor whiteColor];
+//    //添加分栏控制器的主题数组
+//    NSArray *segArray = [[NSArray alloc]initWithObjects:@"1",@"2" ,nil];
+//    //分栏控制器初始化
+//    self.mainSeg = [[UISegmentedControl alloc]initWithItems:segArray];
+//    self.mainSeg.frame = CGRectMake(80, 20, 100, 80);
+//    self.mainSeg.selectedSegmentIndex = 2;
+//    self.mainSeg.tintColor = [UIColor redColor];
+//    //设置样式
+//    self.mainSeg.segmentedControlStyle = UISegmentedControlStylePlain;
+//    //设置在点击后是否恢复原样
+//    self.mainSeg.momentary = YES;
+//    //设置标题
+//    [self.mainSeg setTitle:@"素材" forSegmentAtIndex:0];
+//    [self.mainSeg setTitle:@"荤材" forSegmentAtIndex:1];
+//    //添加事件
+//    [self.mainSeg addTarget:self action:@selector(selectFood) forControlEvents:UIControlEventTouchUpInside];
+//    //添加到父视图上
+//    [self. addSubview:self.mainSeg];
 }
 
+-(void)selectFood
+{
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
