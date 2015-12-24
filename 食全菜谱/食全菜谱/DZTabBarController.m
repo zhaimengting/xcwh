@@ -29,15 +29,15 @@
     
     DZRecommendationViewController *rvc = [[DZRecommendationViewController alloc] init];
     UINavigationController *rvcNav = [[UINavigationController alloc] initWithRootViewController:rvc];
-    rvc.tabBarItem.image = [UIImage imageNamed:@"今日推荐.png"];
+    rvc.tabBarItem.image = [UIImage imageNamed:@"今日推荐"];
 
     DZAllFoodsViewController *afvc = [[DZAllFoodsViewController alloc] init];
     UINavigationController *afNav = [[UINavigationController alloc] initWithRootViewController:afvc];
-    afvc.tabBarItem.image = [UIImage imageNamed:@"食材大全.png"];
+    afvc.tabBarItem.image = [UIImage imageNamed:@"食材大全"];
     
     DZThrepyViewController *tvc = [[DZThrepyViewController alloc] init];
     UINavigationController *tNav = [[UINavigationController alloc] initWithRootViewController:tvc];
-    tvc.tabBarItem.image = [UIImage imageNamed:@"对症食疗.png"];
+    tvc.tabBarItem.image = [UIImage imageNamed:@"对症食疗"];
     
     //self.tabBar.barTintColor = [UIColor colorWithPatternImage: [UIImage imageWithColor: [UIColor colorWithRed:1./255. green:1./255. blue:1./255. alpha:1]]];
     //self.tabBar.barTintColor = [UIColor colorWithRed:61.0 green:159.0 blue:179.0 alpha:1.0];
