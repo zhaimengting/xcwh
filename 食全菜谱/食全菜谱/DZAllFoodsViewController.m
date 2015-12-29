@@ -46,7 +46,7 @@
     self.mainSeg.frame = CGRectMake(0, 0, 150, 32);
     self.mainSeg.selectedSegmentIndex = 0;
     [self selectVegetarianMaterial];
-    self.mainSeg.tintColor = [UIColor colorWithRed:65./255. green:159./255. blue:179./255. alpha:1];
+    self.mainSeg.tintColor = RGB_MD(65, 159, 179);
     //设置样式
     self.mainSeg.segmentedControlStyle = UISegmentedControlStyleBar;
     //设置在点击后是否恢复原样
@@ -82,14 +82,19 @@
 //选择素材
 -(void)selectVegetarianMaterial
 {
+    __weak typeof(self)weakS =self;
     //初始化
-    self.vegetarianMaterialView = [[VegetarianMaterialView alloc]initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height)];
+    self.vegetarianMaterialView = [[VegetarianMaterialView alloc]initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height-104)];
     [self.view addSubview:self.vegetarianMaterialView];
+    [self.vegetarianMaterialView setPushNextVC:^(UIViewController *vc)
+     {
+         [weakS.navigationController pushViewController:vc animated:YES];
+     }];
 }
 //选择荤材
 -(void)selectFragrantMaterial
 {
-    self.fragrantMaterialView = [[FragrantMaterialView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    self.fragrantMaterialView = [[FragrantMaterialView alloc]initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height-104)];
     [self.view addSubview:self.fragrantMaterialView];
 }
 - (void)didReceiveMemoryWarning {

@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface MaterialListView : UIView
-
+/**
+ *跳转到详情页面
+ */
+@property(nonatomic,copy)void(^pushFoodDetailsVC)(UIViewController *vc);
 @end

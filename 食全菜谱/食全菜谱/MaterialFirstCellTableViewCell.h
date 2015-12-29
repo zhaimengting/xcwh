@@ -1,5 +1,5 @@
 //
-//  VegetarianMaterialView.h
+//  MaterialFirstCellTableViewCell.h
 //  食全菜谱
 //
 //  Created by 翔辰文化 on 15/12/25.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VegetarianMaterialView : UIView
-
-@property(nonatomic,copy)void(^pushNextVC)(UIViewController *vc);
+@interface MaterialFirstCellTableViewCell : UITableViewCell
 
 @end

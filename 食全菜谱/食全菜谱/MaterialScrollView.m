@@ -53,61 +53,61 @@
     [_arrayView addObject:view];
     _scrollView.contentSize = CGSizeMake(_numOfView * _scrollView.frame.size.width, _scrollView.frame.size.height);
 }
-//-(UIView *)currentView
-//{
-//    NSUInteger currentIndex =(NSUInteger) _scrollView.contentOffset.x / (NSUInteger)_scrollView.frame.size.width;
-//    UIView *view = nil;
-//    
-//    if (_arrayView.count > currentIndex)
-//    {
-//        view = [_arrayView objectAtIndex:currentIndex];
-//    }
-//    
-//    return view;
-//}
-//-(void)stopScroll
-//{
-//    UIView *currentView = [self currentView];
-//    
-//    if (self.stopScrollToView)
-//    {
-//        self.stopScrollToView(currentView);
-//    }
-//    
-//    NSInteger  currentIndex = _scrollView.contentOffset.x / _scrollView.frame.size.width;
-//    
-//    if (self.scrollToIndex)
-//    {
-//        self.scrollToIndex(currentIndex);
-//    }
-//}
-//
-////滚动到第几个view
-//-(void)scrollToViewWithIndex:(NSInteger)index
-//{
-//    
-//    CGFloat contentoffSetX = (index - 1) * _scrollView.frame.size.width;
-//    
-//    [_scrollView setContentOffset:CGPointMake(contentoffSetX, 0)];
-//    
-//    [self stopScroll];
-//}
-//
-//// 停止滚动的时候调用 stopScroll
-//// 停止减速
-//-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
-//{
-//    [self stopScroll];
-//}
-//// 停止拖拽  decelerate判断时候会减速
-//-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
-//{
-//    
-//    if (decelerate == NO)
-//    {
-//        [self stopScroll];
-//    }
-//}
+-(UIView *)currentView
+{
+    NSUInteger currentIndex =(NSUInteger) _scrollView.contentOffset.x / (NSUInteger)_scrollView.frame.size.width;
+    UIView *view = nil;
+    
+    if (_arrayView.count > currentIndex)
+    {
+        view = [_arrayView objectAtIndex:currentIndex];
+    }
+    
+    return view;
+}
+-(void)stopScroll
+{
+    UIView *currentView = [self currentView];
+    
+    if (self.stopScrollToView)
+    {
+        self.stopScrollToView(currentView);
+    }
+    
+    NSInteger  currentIndex = _scrollView.contentOffset.x / _scrollView.frame.size.width;
+    
+    if (self.scrollToIndex)
+    {
+        self.scrollToIndex(currentIndex);
+    }
+}
+
+//滚动到第几个view
+-(void)scrollToViewWithIndex:(NSInteger)index
+{
+    
+    CGFloat contentoffSetX = (index - 1) * _scrollView.frame.size.width;
+    
+    [_scrollView setContentOffset:CGPointMake(contentoffSetX, 0)];
+    
+    [self stopScroll];
+}
+
+// 停止滚动的时候调用 stopScroll
+// 停止减速
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    [self stopScroll];
+}
+// 停止拖拽  decelerate判断时候会减速
+-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    
+    if (decelerate == NO)
+    {
+        [self stopScroll];
+    }
+}
 
 /*
 // Only override drawRect: if you perform custom drawing.

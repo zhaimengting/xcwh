@@ -11,15 +11,23 @@
 #import "MaterialListView.h"
 //scroview
 #import "MaterialScrollView.h"
-//素材分类View
-#import "VergetarianMaterialCategoryView.h"
+
 
 @interface VegetarianMaterialView ()<UIScrollViewDelegate>
 //滑动scroview
 @property(nonatomic,strong)MaterialScrollView *materialScrollView;
+
 @end
 
 @implementation VegetarianMaterialView
+{
+    //按钮数组
+    NSMutableArray *_buttonsArray;
+    //被选中的button
+    UIButton *_isSelectedBtn;
+    
+    NSInteger _index;
+}
 
 -(instancetype)initWithFrame:(CGRect)frame
 {
@@ -27,13 +35,12 @@
     
     if (self)
     {
-        self.backgroundColor = [UIColor greenColor];
-        
-        //[self addClassifiedMaterialBtn];
-        
+        //添加分类按钮
+        [self addClassifiedMaterialBtn];
+        //添加到视图上
         [self addSubview:self.materialScrollView];
-        
-        
+        //初始化
+        _buttonsArray = [[NSMutableArray alloc]init];
     }
     return  self;
 }
@@ -45,33 +52,71 @@
         //初始化
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         btn.frame = CGRectMake(self.frame.size.width/4.*i, 0, self.frame.size.width/4., 40);
-        //设置按钮的主题和主题颜色
-        [btn setTitle:[NSString stringWithFormat:@"%li",i+1] forState:UIControlStateNormal];
         [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        btn.tag = i+1;
         //设置背景颜色
-        btn.backgroundColor = [UIColor greenColor];
+        btn.backgroundColor = RGB_MD(65, 159, 179);
+        //没有被选中的状态
+        [btn setBackgroundImage:[UIImage imageNamed:@"u20"] forState:UIControlStateNormal];
         //添加按钮点击事件
         [btn addTarget:self action:@selector(btnOnClick:) forControlEvents:UIControlEventTouchUpInside];
         //添加到父视图上
         [self addSubview:btn];
+        //添加到数组上
+        [_buttonsArray addObject:btn];
+        switch (i) {
+            case 0:
+                //设置按钮的主题和主题颜色
+                [btn setTitle:[NSString stringWithFormat:@"蔬菜类"] forState:UIControlStateNormal];
+                break;
+            case 1:
+                //设置按钮的主题和主题颜色
+                [btn setTitle:[NSString stringWithFormat:@"瓜果类"] forState:UIControlStateNormal];
+                break;
+            case 2:
+                //设置按钮的主题和主题颜色
+                [btn setTitle:[NSString stringWithFormat:@"菌菇类"] forState:UIControlStateNormal];
+                break;
+            case 3:
+                //设置按钮的主题和主题颜色
+                [btn setTitle:[NSString stringWithFormat:@"豆制类"] forState:UIControlStateNormal];
+                break;
+            default:
+                break;
+        }
     }
 }
-//按钮点击事件
 -(void)btnOnClick:(UIButton *)btn
 {
-    
+    [_materialScrollView scrollToViewWithIndex:btn.tag];
+    _isSelectedBtn = btn;
+    _isSelectedBtn.selected = YES;
+    [_isSelectedBtn setBackgroundImage:[UIImage imageNamed:@"u16"] forState:UIControlStateSelected];
 }
 -(MaterialScrollView *)materialScrollView
 {
+    __weak typeof(self)weakS =self;
+    
     if (_materialScrollView == nil)
     {
-        _materialScrollView = [[MaterialScrollView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+        _materialScrollView = [[MaterialScrollView alloc]initWithFrame:CGRectMake(0, 40, self.frame.size.width, self.frame.size.height-44)];
         for (NSUInteger i = 0; i < 4; i++)
         {
             MaterialListView *materialListView = [[MaterialListView alloc]initWithFrame:CGRectMake(self.materialScrollView.frame.size.width*i, 0, self.materialScrollView.frame.size.width, self.materialScrollView.frame.size.height)];
+            
+            [materialListView setPushFoodDetailsVC:^(UIViewController *vc)
+            {
+                if (weakS.pushNextVC)
+                {
+                    weakS.pushNextVC(vc);
+                }
+            }];
         
             [_materialScrollView loadView:materialListView];
+            
+            
         }
+        
     }
     return _materialScrollView;
 }

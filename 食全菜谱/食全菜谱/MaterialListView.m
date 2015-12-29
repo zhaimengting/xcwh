@@ -7,10 +7,15 @@
 //
 
 #import "MaterialListView.h"
+#import "MaterialFirstCellTableViewCell.h"
+#import "MaterialSecondTableViewCell.h"
+#import "FoodDetailsViewController.h"
+
 
 @interface MaterialListView ()<UITableViewDataSource,UITableViewDelegate>
 
 @property(nonatomic,strong)UITableView *tableView;
+
 @property(nonatomic,strong)NSMutableArray *dataArray;
 
 @end
@@ -68,14 +73,58 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *indentifier = @"cell";
-    
-    UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:indentifier];
-    if (!cell)
+    if (indexPath.row == 0)
     {
-        cell.backgroundColor = [UIColor grayColor];
+        static NSString *indentifier = @"MaterialFirstCellTableViewCell";
+        
+        MaterialFirstCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:indentifier];
+        
+        if (!cell)
+        {
+            cell = [[[NSBundle mainBundle]loadNibNamed:@"MaterialFirstCellTableViewCell" owner:nil options:nil]firstObject];
+        }
+        return cell;
     }
-    return cell;
+    else
+    {
+        static NSString *indentifier = @"MaterialSecondTableViewCell";
+        
+        MaterialSecondTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:indentifier];
+        
+        if (!cell)
+        {
+            cell = [[[NSBundle mainBundle]loadNibNamed:@"MaterialSecondTableViewCell" owner:nil options:nil]firstObject];
+        }
+        return cell;
+    }
+}
+//行高
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 0)
+    {
+        return MDYFrom6(138.);
+    }
+    else
+    {
+        return MDYFrom6(162.);
+    }
+}
+//行的点击时间
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 0)
+    {
+        if (self.pushFoodDetailsVC)
+        {
+            FoodDetailsViewController *vc = [[FoodDetailsViewController alloc]init];
+            self.pushFoodDetailsVC(vc);
+        }
+    }
+    else
+    {
+        
+    }
 }
 
 /*
