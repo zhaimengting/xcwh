@@ -14,11 +14,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="165"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u3N-B3-gzn">
-                        <rect key="frame" x="10" y="12" width="143" height="128"/>
-                        <color key="backgroundColor" red="1" green="0.77323813900000005" blue="0.29014456910000003" alpha="1" colorSpace="calibratedRGB"/>
-                        <state key="normal" title="Button"/>
-                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lable1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Soe-6P-LJz">
                         <rect key="frame" x="10" y="140" width="143" height="25"/>
                         <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -42,6 +37,17 @@
                         <rect key="frame" x="168" y="12" width="142" height="128"/>
                         <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <state key="normal" title="Button"/>
+                        <connections>
+                            <action selector="buttonOnclick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="qL0-HL-DJt"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u3N-B3-gzn">
+                        <rect key="frame" x="10" y="12" width="143" height="128"/>
+                        <color key="backgroundColor" red="1" green="0.77323813900000005" blue="0.29014456910000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <state key="normal" title="Button"/>
+                        <connections>
+                            <action selector="buttonOnclick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="uvy-En-Zli"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

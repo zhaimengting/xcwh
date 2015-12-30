@@ -10,6 +10,10 @@
 
 @interface MaterialScrollView : UIView
 /**
+ *滑动几个View
+ */
+@property(nonatomic,assign)NSInteger numOfView;
+/**
  *记录点击的button的下标
  */
 @property(nonatomic,assign)NSInteger buttonIndex;
@@ -29,5 +33,7 @@
  *点击到第几个view
  */
 -(void)scrollToViewWithIndex:(NSInteger)index;
+
+
 
 @end

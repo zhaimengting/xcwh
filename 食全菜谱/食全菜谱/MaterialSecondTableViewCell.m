@@ -7,6 +7,7 @@
 //
 
 #import "MaterialSecondTableViewCell.h"
+#import "FoodDetailsViewController.h"
 
 @implementation MaterialSecondTableViewCell
 
@@ -20,4 +21,12 @@
     // Configure the view for the selected state
 }
 
+- (IBAction)buttonOnclick:(UIButton *)sender
+{
+    if (self.pushNextVC)
+    {
+        FoodDetailsViewController *vc = [[FoodDetailsViewController alloc]init];
+        self.pushNextVC(vc);
+    }
+}
 @end

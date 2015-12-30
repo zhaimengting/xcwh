@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MaterialSecondTableViewCell : UITableViewCell
+@property(nonatomic,copy)void(^pushNextVC)(UIViewController *);
 @property (weak, nonatomic) IBOutlet UIButton *firstBtn;
 @property (weak, nonatomic) IBOutlet UIButton *secondBtn;
 @property (weak, nonatomic) IBOutlet UILabel *firstLabel;

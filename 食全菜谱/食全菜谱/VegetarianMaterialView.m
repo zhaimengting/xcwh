@@ -16,6 +16,7 @@
 @interface VegetarianMaterialView ()<UIScrollViewDelegate>
 //滑动scroview
 @property(nonatomic,strong)MaterialScrollView *materialScrollView;
+@property(nonatomic,strong)UIButton *isSelectedBtn;
 
 @end
 
@@ -23,8 +24,6 @@
 {
     //按钮数组
     NSMutableArray *_buttonsArray;
-    //被选中的button
-    UIButton *_isSelectedBtn;
     
     NSInteger _index;
 }
@@ -58,6 +57,7 @@
         btn.backgroundColor = RGB_MD(65, 159, 179);
         //没有被选中的状态
         [btn setBackgroundImage:[UIImage imageNamed:@"u20"] forState:UIControlStateNormal];
+        //[btn setBackgroundImage:[UIImage imageNamed:@"u34"] forState:UIControlStateSelected];
         //添加按钮点击事件
         [btn addTarget:self action:@selector(btnOnClick:) forControlEvents:UIControlEventTouchUpInside];
         //添加到父视图上
@@ -88,10 +88,7 @@
 }
 -(void)btnOnClick:(UIButton *)btn
 {
-    [_materialScrollView scrollToViewWithIndex:btn.tag];
-    _isSelectedBtn = btn;
-    _isSelectedBtn.selected = YES;
-    [_isSelectedBtn setBackgroundImage:[UIImage imageNamed:@"u16"] forState:UIControlStateSelected];
+    self.isSelectedBtn = btn;
 }
 -(MaterialScrollView *)materialScrollView
 {
@@ -100,6 +97,7 @@
     if (_materialScrollView == nil)
     {
         _materialScrollView = [[MaterialScrollView alloc]initWithFrame:CGRectMake(0, 40, self.frame.size.width, self.frame.size.height-44)];
+        _materialScrollView.numOfView = 4;
         for (NSUInteger i = 0; i < 4; i++)
         {
             MaterialListView *materialListView = [[MaterialListView alloc]initWithFrame:CGRectMake(self.materialScrollView.frame.size.width*i, 0, self.materialScrollView.frame.size.width, self.materialScrollView.frame.size.height)];
@@ -120,6 +118,16 @@
     }
     return _materialScrollView;
 }
+-(void)setIsSelectedBtn:(UIButton *)isSelectedBtn
+{
+    if ([_isSelectedBtn isEqual:isSelectedBtn])
+    {
+        _isSelectedBtn.selected = NO;
+    }
+    _isSelectedBtn = isSelectedBtn;
+    [_isSelectedBtn setSelected:YES];
+}
+
 
 /*
 // Only override drawRect: if you perform custom drawing.

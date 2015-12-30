@@ -10,7 +10,6 @@
 
 @interface MaterialScrollView ()<UIScrollViewDelegate>
 
-@property(nonatomic,assign)NSInteger numOfView;
 
 
 @end
@@ -26,7 +25,6 @@
     self = [super initWithFrame:frame];
     if (self)
     {
-        _numOfView = 4;
         //初始化
         _arrayView = [[NSMutableArray alloc]init];
         

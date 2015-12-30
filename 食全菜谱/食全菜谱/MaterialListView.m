@@ -73,6 +73,7 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    __weak typeof(self)weakS = self;
     if (indexPath.row == 0)
     {
         static NSString *indentifier = @"MaterialFirstCellTableViewCell";
@@ -95,6 +96,12 @@
         {
             cell = [[[NSBundle mainBundle]loadNibNamed:@"MaterialSecondTableViewCell" owner:nil options:nil]firstObject];
         }
+        [cell setPushNextVC:^(UIViewController *vc) {
+            if (weakS.pushFoodDetailsVC)
+            {
+                weakS.pushFoodDetailsVC(vc);
+            }
+        }];
         return cell;
     }
 }
@@ -107,7 +114,7 @@
     }
     else
     {
-        return MDYFrom6(162.);
+        return MDYFrom6(120.);
     }
 }
 //行的点击时间
