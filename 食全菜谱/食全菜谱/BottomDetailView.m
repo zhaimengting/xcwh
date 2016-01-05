@@ -35,7 +35,7 @@ static NSString *indentifer = @"BottomDetailCollectionViewCell";
     //创建layOut
     UICollectionViewFlowLayout *layOut = [[UICollectionViewFlowLayout alloc]init];
     //大小
-    layOut.itemSize = CGSizeMake(self.frame.size.width/2-8, MDYFrom6(120));
+    layOut.itemSize = CGSizeMake(self.frame.size.width/2-8, XCYFrom6(120));
     //初始化
     self.collectionView = [[UICollectionView alloc]initWithFrame:self.bounds collectionViewLayout:layOut];
     self.collectionView.backgroundColor = [UIColor whiteColor];

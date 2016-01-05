@@ -11,17 +11,17 @@
 #import "MaterialScrollView.h"
 //制作材例
 #import "BottomDetailView.h"
-//食材概述View
-#import "FoodBriefView.h"
+#import "TopDetailReusableView.h"
 
 
-@interface FoodDetailsViewController ()
-@property(nonatomic,strong)TopDetailView *topDetailView;
-//滑动scroview
-@property(nonatomic,strong)MaterialScrollView *materialScrollView;
-
+@interface FoodDetailsViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
+//collectionView
+@property(nonatomic,strong)UICollectionView *collectionView;
+//数据源
+@property(nonatomic,strong)NSMutableArray *dataArray;
 @end
 
+static NSString *cellName = @"cell";
 @implementation FoodDetailsViewController
 {
     CGFloat _topDetailViewHeight;
@@ -30,58 +30,54 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.automaticallyAdjustsScrollViewInsets = NO;
     self.view.backgroundColor = [UIColor whiteColor];
     
-    _topDetailViewHeight = MDYFrom6(200);
-    
-    [self.view addSubview:self.topDetailView];
-    
-    [self.view addSubview:self.materialScrollView];
-    
+    [self initView];
 }
--(TopDetailView *)topDetailView
+-(void)initView
 {
-    if (_topDetailView == nil)
-    {
-        _topDetailView = [[TopDetailView alloc]initWithFrame:CGRectMake(MDXFrom6(10), 64, self.view.frame.size.width-2*MDXFrom6(10), _topDetailViewHeight)];
-    }
-    return _topDetailView;
-}
-
--(MaterialScrollView *)materialScrollView
-{
-    __weak typeof(self)weakS =self;
+    //初始化layOut
+    UICollectionViewFlowLayout *layOut = [[UICollectionViewFlowLayout alloc]init];
+    //大小
+    layOut.itemSize = CGSizeMake(XCW-2*XCXFrom6(10), 300);
+    self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 64, XCW, XCH-108) collectionViewLayout:layOut];
+    //设置代理
+    self.collectionView.dataSource = self;
+    self.collectionView.delegate = self;
+    //背景色
+    self.collectionView.backgroundColor = [UIColor clearColor];
+    //添加到视图上
+    [self.view addSubview:self.collectionView];
     
-    if (_materialScrollView == nil)
-    {
-        _materialScrollView = [[MaterialScrollView alloc]initWithFrame:CGRectMake(MDXFrom6(10), 64+_topDetailViewHeight+12, self.view.frame.size.width-2*MDXFrom6(10), self.view.frame.size.height-_topDetailViewHeight-104-12)];
-        _materialScrollView.numOfView = 5;
-        for (NSUInteger i = 0; i < 5; i++)
-        {
-            if (i == 0)
-            {
-                //食材菜例
-                BottomDetailView *bottomDetailView = [[BottomDetailView alloc]initWithFrame:CGRectMake(0, 0, self.materialScrollView.frame.size.width, self.materialScrollView.frame.size.height)];
-                [_materialScrollView loadView:bottomDetailView];
-            
-                [bottomDetailView setPushNextVC:^(UIViewController *vc)
-                 {
-                     [weakS.navigationController pushViewController:vc animated:YES];
-                }];
-            }
-            else if(i == 1)
-            {
-                //食材概述
-                FoodBriefView *foodBriefView = [[FoodBriefView alloc]initWithFrame:CGRectMake(0, 0, self.materialScrollView.frame.size.width, self.materialScrollView.frame.size.height)];
-                [_materialScrollView loadView:foodBriefView];
-            }
-
-        }
-        
-    }
-    return _materialScrollView;
+    //注册
+    //头视图
+    [self.collectionView registerClass:[TopDetailReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"TopDetailReusableView"];
+    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:cellName];
+    //头视图设置大小
+    layOut.headerReferenceSize = CGSizeMake(XCW, 200);
 }
-
+#pragma mark - 黄金三问
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 1;
+}
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return 10;
+}
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellName forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor redColor];
+    return cell;
+}
+#pragma mark - 头视图
+-(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    TopDetailReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"TopDetailReusableView" forIndexPath:indexPath];
+    return headerView;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

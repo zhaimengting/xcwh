@@ -13,14 +13,13 @@
     //图片高度
    CGFloat _topImageViewHeight;
 }
-
 -(instancetype)initWithFrame:(CGRect)frame
 {
     self= [super initWithFrame:frame];
     
     if (self)
     {
-        _topImageViewHeight = MDYFrom6(155);
+        _topImageViewHeight = XCYFrom6(155);
         [self initView];
     }
     return self;
@@ -28,14 +27,14 @@
 -(void)initView
 {
     //添加顶部图片
-    UIImageView *topImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, MDYFrom6(15), self.frame.size.width, _topImageViewHeight)];
+    UIImageView *topImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, XCYFrom6(15), self.frame.size.width, _topImageViewHeight)];
     topImageView.image = [UIImage imageNamed:@"u36"];
     //添加到视图上
     [self addSubview:topImageView];
     
     //设置功能按钮
     CGFloat _buttonWidth = self.frame.size.width/5;
-    CGFloat _buttonHeigt = MDYFrom6(45);
+    CGFloat _buttonHeigt = XCYFrom6(45);
     //循环创建button
     for (NSInteger i = 0 ; i <5 ; i ++)
     {

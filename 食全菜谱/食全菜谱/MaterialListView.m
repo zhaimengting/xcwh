@@ -110,11 +110,11 @@
 {
     if (indexPath.row == 0)
     {
-        return MDYFrom6(138.);
+        return XCYFrom6(138.);
     }
     else
     {
-        return MDYFrom6(120.);
+        return XCYFrom6(120.);
     }
 }
 //行的点击时间

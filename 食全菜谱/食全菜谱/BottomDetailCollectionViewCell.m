@@ -15,11 +15,11 @@
     if (self)
     {
         //照片初始化
-        self.imgView = [[UIImageView alloc]initWithFrame:CGRectMake(0, MDYFrom6(5), self.frame.size.width, self.frame.size.height-MDYFrom6(25))];
+        self.imgView = [[UIImageView alloc]initWithFrame:CGRectMake(0, XCYFrom6(5), self.frame.size.width, self.frame.size.height-XCYFrom6(25))];
         //添加到视图上
         [self addSubview:self.imgView];
         //标签初始化
-        self.nameTitle = [[UILabel alloc]initWithFrame:CGRectMake(0, self.imgView.frame.size.height+MDYFrom6(5), self.frame.size.width, MDYFrom6(25))];
+        self.nameTitle = [[UILabel alloc]initWithFrame:CGRectMake(0, self.imgView.frame.size.height+XCYFrom6(5), self.frame.size.width, XCYFrom6(25))];
         //字体颜色
         self.nameTitle.textColor = [UIColor blackColor];
         //添加到视图上

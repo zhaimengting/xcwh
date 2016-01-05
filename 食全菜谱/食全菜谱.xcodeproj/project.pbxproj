@@ -24,8 +24,9 @@
 		14860BE51C32558D00E66444 /* BottomDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14860BE41C32558D00E66444 /* BottomDetailView.m */; };
 		14860BE81C325F7000E66444 /* BottomDetailCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14860BE71C325F7000E66444 /* BottomDetailCollectionViewCell.m */; };
 		14860BEC1C3378C600E66444 /* FoodDetailMakeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14860BEB1C3378C600E66444 /* FoodDetailMakeViewController.m */; };
-		14860BF11C33AA4E00E66444 /* FoodBriefView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14860BF01C33AA4E00E66444 /* FoodBriefView.m */; };
-		14860BF41C33D7A600E66444 /* FoodBriefTxtVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 14860BF31C33D7A600E66444 /* FoodBriefTxtVIew.m */; };
+		14860BF71C3521B900E66444 /* TopDetailReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14860BF61C3521B900E66444 /* TopDetailReusableView.m */; };
+		14860BFA1C3A20C600E66444 /* FoodRelatedKnowledgeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14860BF91C3A20C600E66444 /* FoodRelatedKnowledgeCollectionViewCell.m */; };
+		14860BFD1C3A587000E66444 /* MutualPromotionAndRestraintCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14860BFC1C3A587000E66444 /* MutualPromotionAndRestraintCell.m */; };
 		8C2D4B161C2BA17E00121D23 /* slideImagesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2D4B151C2BA17E00121D23 /* slideImagesCell.m */; };
 		8CF435581C2A7E790039CFC5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF435571C2A7E790039CFC5 /* main.m */; };
 		8CF4355B1C2A7E790039CFC5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF4355A1C2A7E790039CFC5 /* AppDelegate.m */; };
@@ -88,10 +89,12 @@
 		14860BE71C325F7000E66444 /* BottomDetailCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BottomDetailCollectionViewCell.m; sourceTree = "<group>"; };
 		14860BEA1C3378C600E66444 /* FoodDetailMakeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodDetailMakeViewController.h; sourceTree = "<group>"; };
 		14860BEB1C3378C600E66444 /* FoodDetailMakeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodDetailMakeViewController.m; sourceTree = "<group>"; };
-		14860BEF1C33AA4E00E66444 /* FoodBriefView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodBriefView.h; sourceTree = "<group>"; };
-		14860BF01C33AA4E00E66444 /* FoodBriefView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodBriefView.m; sourceTree = "<group>"; };
-		14860BF21C33D7A600E66444 /* FoodBriefTxtVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodBriefTxtVIew.h; sourceTree = "<group>"; };
-		14860BF31C33D7A600E66444 /* FoodBriefTxtVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodBriefTxtVIew.m; sourceTree = "<group>"; };
+		14860BF51C3521B900E66444 /* TopDetailReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopDetailReusableView.h; sourceTree = "<group>"; };
+		14860BF61C3521B900E66444 /* TopDetailReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopDetailReusableView.m; sourceTree = "<group>"; };
+		14860BF81C3A20C600E66444 /* FoodRelatedKnowledgeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodRelatedKnowledgeCollectionViewCell.h; sourceTree = "<group>"; };
+		14860BF91C3A20C600E66444 /* FoodRelatedKnowledgeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodRelatedKnowledgeCollectionViewCell.m; sourceTree = "<group>"; };
+		14860BFB1C3A587000E66444 /* MutualPromotionAndRestraintCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MutualPromotionAndRestraintCell.h; sourceTree = "<group>"; };
+		14860BFC1C3A587000E66444 /* MutualPromotionAndRestraintCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MutualPromotionAndRestraintCell.m; sourceTree = "<group>"; };
 		8C2D4B141C2BA17E00121D23 /* slideImagesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = slideImagesCell.h; sourceTree = "<group>"; };
 		8C2D4B151C2BA17E00121D23 /* slideImagesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = slideImagesCell.m; sourceTree = "<group>"; };
 		8CF435531C2A7E790039CFC5 /* 食全菜谱.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "食全菜谱.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -190,10 +193,6 @@
 				14860BDE1C32361700E66444 /* TopDetailView.m */,
 				14860BE31C32558D00E66444 /* BottomDetailView.h */,
 				14860BE41C32558D00E66444 /* BottomDetailView.m */,
-				14860BEF1C33AA4E00E66444 /* FoodBriefView.h */,
-				14860BF01C33AA4E00E66444 /* FoodBriefView.m */,
-				14860BF21C33D7A600E66444 /* FoodBriefTxtVIew.h */,
-				14860BF31C33D7A600E66444 /* FoodBriefTxtVIew.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -221,6 +220,8 @@
 		14860BED1C3384C200E66444 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				14860BF51C3521B900E66444 /* TopDetailReusableView.h */,
+				14860BF61C3521B900E66444 /* TopDetailReusableView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -228,6 +229,10 @@
 		14860BEE1C3384D900E66444 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				14860BF81C3A20C600E66444 /* FoodRelatedKnowledgeCollectionViewCell.h */,
+				14860BF91C3A20C600E66444 /* FoodRelatedKnowledgeCollectionViewCell.m */,
+				14860BFB1C3A587000E66444 /* MutualPromotionAndRestraintCell.h */,
+				14860BFC1C3A587000E66444 /* MutualPromotionAndRestraintCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -491,10 +496,8 @@
 				8CF435941C2A7FA30039CFC5 /* DZAllFoodsViewController.m in Sources */,
 				14860BA71C2CED7900E66444 /* FragrantMaterialView.m in Sources */,
 				14860BEC1C3378C600E66444 /* FoodDetailMakeViewController.m in Sources */,
-				14860BF41C33D7A600E66444 /* FoodBriefTxtVIew.m in Sources */,
 				14860BA41C2CED2C00E66444 /* VegetarianMaterialView.m in Sources */,
 				8CF435641C2A7E790039CFC5 /* ____.xcdatamodeld in Sources */,
-				14860BF11C33AA4E00E66444 /* FoodBriefView.m in Sources */,
 				14860BD21C30FBF800E66444 /* MaterialSecondTableViewCell.m in Sources */,
 				8CF435971C2A7FDC0039CFC5 /* DZThrepyViewController.m in Sources */,
 				14860BAD1C2D105000E66444 /* MaterialScrollView.m in Sources */,
@@ -502,7 +505,10 @@
 				14860BE51C32558D00E66444 /* BottomDetailView.m in Sources */,
 				8C2D4B161C2BA17E00121D23 /* slideImagesCell.m in Sources */,
 				14860B931C2BD02300E66444 /* UIImage+Category.m in Sources */,
+				14860BF71C3521B900E66444 /* TopDetailReusableView.m in Sources */,
+				14860BFD1C3A587000E66444 /* MutualPromotionAndRestraintCell.m in Sources */,
 				8CF4355B1C2A7E790039CFC5 /* AppDelegate.m in Sources */,
+				14860BFA1C3A20C600E66444 /* FoodRelatedKnowledgeCollectionViewCell.m in Sources */,
 				8CF435911C2A7F5C0039CFC5 /* DZRecommendationViewController.m in Sources */,
 				8CF435581C2A7E790039CFC5 /* main.m in Sources */,
 				14860BDF1C32361700E66444 /* TopDetailView.m in Sources */,

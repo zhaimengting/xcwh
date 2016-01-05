@@ -34,6 +34,4 @@
  */
 -(void)scrollToViewWithIndex:(NSInteger)index;
 
-
-
 @end

@@ -36,7 +36,7 @@
 {
     _scrollView = [[UIScrollView alloc]initWithFrame:self.bounds];
     _scrollView.pagingEnabled = YES;
-    _scrollView.backgroundColor = [UIColor redColor];
+    _scrollView.backgroundColor = [UIColor whiteColor];
     _scrollView.showsVerticalScrollIndicator = NO;
     //设置代理
     _scrollView.delegate = self;
